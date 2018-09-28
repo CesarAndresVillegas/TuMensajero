@@ -1,0 +1,39 @@
+<ion-view view-title="Menu" name="menu-view" ng-init="init()" cache-view="false">
+	<ion-header-bar class="app-icon-header">
+		<button class="button button-icon icon ion-chevron-left custom-icon-white" ng-click="irAtras()" ng-disabled="controlDisabled"></button>
+	</ion-header-bar>
+	<ion-content>
+		<div class="container">
+			<br>
+			<div class="background_solicita_pedido">
+			</div>
+			<br>
+			<button class="boton-gris boton-centrado button button-block ion-ios-plus icon-left custom-icon-yellow" ng-click="agregarPeticion()" ng-disabled="controlDisabled">
+				<a class="fuente-boton-gris">Agregar petición</a>
+			</button>
+			<br>
+			<label class="item item-input">
+				<textarea rows="3" placeholder="Observaciones" ng-model="orden.observations"></textarea>
+			</label>
+			<br>
+			<div class="card" ng-repeat="t in trayectos">
+				<div class="item item-divider cell-2">
+					<a class="fuente-boton"># {{$index +1}} Lugar inicio: {{t.initial_address}}</a>
+				</div>
+				<div class="item item-text-wrap">
+					<a class="ionic-texto-detalle-historial">Anotaciones: {{t.observations}}</a>
+				</div>
+				<div class="item item-divider cell-2">
+					<a class="fuente-boton">Lugar fin: {{t.final_address}}</a>
+				</div>
+			</div>
+			<button class="boton-gris boton-centrado button button-block ion-trash-a icon-left custom-icon-yellow" ng-click="eliminarTrayecto()" ng-disabled="controlDisabled">
+				<a class="fuente-boton-gris">Eliminar trayecto final</a>
+			</button>
+		</div>
+	</ion-content>
+	<ion-footer-bar class="bar-assertive">
+		<button style="font-weight: bold;" class="button ion-checkmark-circled button-clear" ng-click="finalizar()" ng-disabled="controlDisabled">Solicitar</button>
+		<a class="title">Total:<b>{{ getTotalOrden() | currency:undefined:0}}</b></a>
+	</ion-footer-bar>
+</ion-view>

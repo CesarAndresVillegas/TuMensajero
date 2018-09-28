@@ -1,0 +1,42 @@
+<ion-view view-title="Perfil Usuario" align-title="left" ng-init="init()" cache-view="false">
+    <ion-header-bar class="app-icon-header">
+        <button class="button button-icon icon ion-chevron-left custom-icon-white" ng-click="irAtras()" ng-disabled="controlDisabled"></button>
+    </ion-header-bar>
+    <ion-content scroll="true">
+        <div class="content">
+            <div class="app-icon-perfil" style="height: 80px;background-size: 80px 80px; background-repeat: no-repeat;"></div>
+            <h4>{{usuario.name}}</h4>
+            <h3>{{usuario.mail}}</h3>
+        </div>
+        <div style="margin-top: 0; margin-bottom: 5px;" class="app-bar-profile"></div>
+        <div class="list">
+            <label style="margin-left:10%; margin-right:10%;" class="item item-input">
+                <input type="text" placeholder="Nombre" spellcheck="false" ng-model="usuario.name">
+            </label>
+            <label style="margin-left:10%; margin-right:10%;" class="item item-input">
+                <input type="text" placeholder="Apellido" spellcheck="false" ng-model="usuario.last_name">
+            </label>
+            <label style="margin-left:10%; margin-right:10%;" class="item item-input">
+                <input type="text" placeholder="Teléfono de Contacto" spellcheck="false" ng-model="usuario.phone">
+            </label>
+            <button style="margin-top: 5px; margin-bottom: 5px;" class="boton-gris boton-centrado button button-small" ng-click="modificarDatos()" ng-disabled="controlDisabled">
+                <a class="fuente-boton-gris">Modificar Datos</a>
+            </button>
+            <label style="margin-left:10%; margin-right:10%;" class="item item-input">
+                <input type="password" placeholder="Contraseña actual" spellcheck="false" ng-model="usuario.oldPass">
+            </label>
+            <label style="margin-left:10%; margin-right:10%;" class="item item-input">
+                <input type="password" placeholder="Nueva contraseña" spellcheck="false" ng-model="usuario.newPass">
+            </label>
+            <label style="margin-left:10%; margin-right:10%;" class="item item-input">
+                <input type="password" placeholder="Nueva contraseña" spellcheck="false" ng-model="usuario.newPassConfirm">
+            </label>
+            <button style="margin-top: 5px;" class="boton-gris boton-centrado button button-small" ng-click="modificarPass()" ng-disabled="controlDisabled">
+                <a class="fuente-boton-gris">Modificar Contraseña</a>
+            </button>
+            <button class="button button-clear button-positive button-small boton-centrado" ng-click="terms()">
+                Ver términos y condiciones
+            </button>
+        </div>
+    </ion-content>
+</ion-view>

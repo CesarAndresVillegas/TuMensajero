@@ -1,0 +1,24 @@
+<ion-view view-title="Login" align-title="left" ng-init="init()" cache-view="false">
+    <ion-content>
+        <ion-slide-box show-pager="true" does-continue="true" pager-click="navSlide(index)" on-slide-changed="slideHasChanged($index)" slide-interval="10000" auto-play="true">
+            <ion-slide>
+                <img style="width: 100%;" src="img/tuto1.jpg" />
+            </ion-slide>
+            <ion-slide>
+                <img style="width: 100%;" src="img/tuto2.jpg" />
+            </ion-slide>
+            <ion-slide>
+                <img style="width: 100%;" src="img/tuto3.jpg" />
+            </ion-slide>
+            <ion-slide>
+                <img style="width: 100%;" src="img/tuto4.jpg" />
+            </ion-slide>
+            <ion-slide ng-focus="goMenu()">
+                <img style="width: 100%;" />
+            </ion-slide>
+        </ion-slide-box>
+    </ion-content>
+    <div class="bar bar-footer footer-transparent1" style="text-align: left;">
+        <button ng-click="omitir()" class="button boton-transparente linea-boton0" ng-disabled="controlDisabled"><a class="fuente-footer">Omitir</a></button>
+    </div>
+</ion-view>

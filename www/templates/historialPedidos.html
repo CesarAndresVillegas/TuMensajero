@@ -1,0 +1,36 @@
+<ion-view view-title="Perfil" ng-init="init()" cache-view="false">
+    <ion-header-bar class="app-icon-header">
+        <button class="button button-icon icon ion-chevron-left custom-icon-white" ng-click="irAtras()" ng-disabled="controlDisabled"></button>
+    </ion-header-bar>
+    <ion-content>
+        <br>
+        <div class="content" style="margin-top: 2%; background-color: lightgray; height: 70px;">
+            <h1><a class="ionic-titulo1-historial">{{historialLista.length}}</a><br><a class="ionic-titulo2-historial">Items de Historial</a></h1>
+        </div>
+        <div class="list">
+            <div ng-repeat="item in historialLista.slice(((contadorPagina-1)*itemsPerPage), ((contadorPagina)*itemsPerPage))" ng-click="verDetalles($index)">
+                <a style="min-height: 0;" class="item item-thumbnail-left" ng-switch on="item.order_status_id">
+                    <img style="height:25px; width:25px; margin-left:17%; margin-top:2%;" ng-switch-when="1" src="img/inProgress.png">
+                    <img style="height:25px; width:25px; margin-left:17%; margin-top:2%;" ng-switch-when="2" src="img/inProgress.png">
+                    <img style="height:25px; width:25px; margin-left:17%; margin-top:2%;" ng-switch-when="3" src="img/inProgress.png">
+                    <img style="height:25px; width:25px; margin-left:17%; margin-top:2%;" ng-switch-when="4" src="img/pending-user.png">
+                    <img style="height:25px; width:25px; margin-left:17%; margin-top:2%;" ng-switch-when="5" src="img/success.png">
+                    <img style="height:25px; width:25px; margin-left:17%; margin-top:2%;" ng-switch-when="6" src="img/cancelled.png">
+                    <img style="height:25px; width:25px; margin-left:17%; margin-top:2%;" ng-switch-default src="img/inProgress.png">
+                    <p class="ionic-texto-list-historial">Pedido: {{item.id}}</p>
+                    <p class="ionic-texto-list-historial">Mensajero: {{item.delivery_name}}</p>
+                    <p class="ionic-texto-list-historial">Fecha: {{item.register_date}}</p>
+                    <p class="ionic-texto-list-historial">Total: {{item.total}}</p>
+                </a>
+            </div>
+        </div>
+        <div class="row boton-centrado">
+            <button class="col col-33 button custom-back-transparent" ng-click="anterior()" ng-disabled="contadorPagina == 1"><a>Anterior</a></button>
+            <div class="col col-33 col-center" style="text-align: center !important;">
+                <a>{{contadorPagina}} de {{maxPage}}</a>
+            </div>
+            <button class="col col-33 button custom-back-transparent" ng-click="siguiente()" ng-disabled="contadorPagina>=maxPage"><a>Siguiente</a></button>
+        </div>
+    </ion-content>
+</div>
+</ion-view>

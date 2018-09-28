@@ -1,0 +1,55 @@
+<ion-view view-title="Menu" name="menu-view" ng-init="init()" cache-view="false">
+  <ion-header-bar class="app-icon-header">
+    <button class="button button-icon icon ion-chevron-left custom-icon-white" ng-click="irAtras()" ng-disabled="controlDisabled"></button>
+  </ion-header-bar>
+  <ion-content>
+    <div style="margin-top: 5%">
+      <br>
+      <h3>Pedido: {{objHistorialSeleccionado.id}}</h3>
+    </div>
+    <div class="row">
+      <img style="background-size: cover; border-radius: 50%; height: 100px; margin: 0 auto; width: 100px;" ng-src="{{objHistorialSeleccionado.picture}}">
+    </div>
+    <br>
+    <div class="row">
+      <div class="col ionic-texto-detalle-historial">Estado del Pedido:</div>
+      <div class="col ionic-texto-detalle-historial" ng-switch on="{{objHistorialSeleccionado.order_status_id}}">
+        <img style="height:10px; width:10px; margin-left:5%" ng-switch-when="1" src="img/inProgress.png">
+        <img style="height:10px; width:10px; margin-left:5%" ng-switch-when="2" src="img/inProgress.png">
+        <img style="height:10px; width:10px; margin-left:5%" ng-switch-when="3" src="img/inProgress.png">
+        <img style="height:10px; width:10px; margin-left:5%" ng-switch-when="4" src="img/pending-user.png">
+        <img style="height:10px; width:10px; margin-left:5%" ng-switch-when="5" src="img/success.png">
+        <img style="height:10px; width:10px; margin-left:5%" ng-switch-when="6" src="img/cancelled.png">
+        <img style="height:10px; width:10px; margin-left:5%" ng-switch-default src="img/inProgress.png">{{objHistorialSeleccionado.name_status}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col ionic-texto-detalle-historial">Nombre del Mensajero:</div>
+      <div class="col ionic-texto-detalle-historial">{{objHistorialSeleccionado.delivery_name}}</div>
+    </div>
+    <div class="row">
+      <div class="col ionic-texto-detalle-historial">Placa:</div>
+      <div class="col ionic-texto-detalle-historial">{{objHistorialSeleccionado.plate}}</div>
+    </div>
+    <div class="row">
+      <div class="col ionic-texto-detalle-historial">Numero de Contacto:</div>
+      <div class="col ionic-texto-detalle-historial">{{objHistorialSeleccionado.delivery_phone}}</div>
+    </div>
+    <div class="card" ng-repeat="item in detalles_pedido">
+      <div class="item item-divider cell-2">
+        <a class="fuente-boton">Lugar inicio:{{item.initial_address}}</a>
+      </div>
+      <div class="item item-text-wrap">
+        <a class="ionic-texto-detalle-historial">Observaciones: {{item.observations}}</a>
+      </div>
+      <div class="item item-divider cell-2">
+        <a class="fuente-boton">Lugar fin:{{item.final_address}}</a>
+      </div>
+    </div>
+  </div>
+</ion-content>
+<ion-footer-bar class="bar-assertive">
+  <button style="font-weight: bold;" class="button ion-navicon-round button-clear" ng-click="mostrarMenu()">Acciones</button>
+  <a class="title">Total: ${{total}}</a>
+</ion-footer-bar>
+</ion-view>

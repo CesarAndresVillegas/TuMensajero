@@ -1,0 +1,13 @@
+<ion-view view-title="Menu" name="menu-view" ng-init="init()" cache-view="false">
+	<ion-header-bar class="app-icon-header">
+		<button class="button button-icon icon ion-chevron-left custom-icon-white" ng-click="irAtras()" ng-disabled="controlDisabled"></button>
+	</ion-header-bar>
+	<ion-content>
+		<div id="map" data-tap-disabled="true"></div>
+	</ion-content>
+	<div class="bar bar-footer footer-transparent">
+		<button class="button button-dark boton-centrado" ng-click="asignarDireccion()">
+			Asignar dirección
+		</button>
+	</div>
+</ion-view>

@@ -1,0 +1,56 @@
+<ion-view view-title="Petición" name="menu-view" ng-init="init()" cache-view="false">
+	<ion-header-bar class="app-icon-header">
+		<button class="button button-icon icon ion-chevron-left custom-icon-white" ng-click="irAtras()"></button>
+	</ion-header-bar>
+	<ion-content>
+		<br>
+		<div class="background_solicita_pedido">
+		</div>
+		<br>
+		<div class="row">
+			<div class="col">
+				<label class="item item-input item-select">
+					<div class="input-label">
+						Tipo:
+					</div>
+					<select ng-options="option.name for option in tipoOrdenes track by option.id"
+					ng-model="tipoSeleccionado.data">
+				</select>
+			</label>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col col-90">
+			<label class="item item-input">
+				<input type="text" placeholder="Dirección Inicio" ng-model="trayecto.initial_address" ng-disabled="!habilitarDireccionInicial">
+			</label>
+		</div>
+		<div class="col">
+			<a class="button button-icon icon ion-ios-location custom-icon-yellow" ng-click="verMapa('inicial')" ng-disabled="!habilitarDireccionInicial || controlDisabled"></a>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col col-90">
+			<label class="item item-input">
+				<input type="text" placeholder="Dirección Fin" ng-model="trayecto.final_address">
+			</label>
+		</div>
+		<div class="col">
+			<a class="button button-icon icon ion-ios-location custom-icon-yellow" ng-click="verMapa('final')" ng-disabled="controlDisabled"></a>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			<label class="item item-input">
+				<textarea rows="3" placeholder="Anotaciones" ng-model="trayecto.observations"></textarea>
+			</label>
+		</div>
+	</div>
+	<button class="boton-gris boton-centrado button button-block ion-ios-plus icon-left custom-icon-yellow" ng-click="agregarTrayecto()" ng-disabled="controlDisabled">
+		<a class="fuente-boton-gris">Agregar Datos</a>
+	</button>
+	<button class="boton-gris boton-centrado button button-block ion-ios-plus icon-left custom-icon-yellow" ng-click="agregarIdaYVuelta()" ng-disabled="controlDisabled">
+		<a class="fuente-boton-gris">Agregar Ida y Vuelta</a>
+	</button>
+</ion-content>
+</ion-view>

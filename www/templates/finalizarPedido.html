@@ -1,0 +1,22 @@
+<ion-view view-title="FinalizarPedido" name="menu-view" ng-init="init()" cache-view="false">
+  <ion-header-bar class="app-icon-header">
+      <button class="button button-icon icon ion-chevron-left custom-icon-white" ng-click="irAtras()" ng-disabled="controlDisabled"></button>
+  </ion-header-bar>
+  <ion-content>
+    <div style="background-color: lightgray; height: 8%;">
+      <h1 style="vertical-align: middle;" class="padding ionic-titulo1-historial">Finalizar Pedido</h1>
+    </div>
+    <div>
+      <br>
+      <ionic-ratings ratingsobj='ratingsObject' ng-model="star_rating"></ionic-ratings>
+      <br>
+      <label class="item item-input">
+        <textarea rows="6" placeholder="Observaciones" ng-model="comment_rating.comment" maxlength="255"></textarea>
+      </label>
+      <br>
+      <button class="boton-gris boton-centrado button button-block ion-checkmark-circled icon-left custom-icon-yellow" ng-click="finalizar()" ng-disabled="controlDisabled">
+        <a class="fuente-boton-gris">Finalizar</a>
+      </button>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,31 @@
+<ion-view view-title="Menu" name="menu-view" ng-init="init()" cache-view="false">
+	<ion-header-bar class="bar-stable bar-assertive">
+		<button class="button button-icon icon ion-chevron-left" ng-click="irAtras()" ng-disabled="controlDisabled"></button>
+	</ion-header-bar>
+	<ion-content has-header="true">
+		<div class="container">
+			<div class="cell-row cell-row-1">
+				<div class="cell-1" ng-click="perfilUsuario()">
+					<div>
+						<div><i class="ion-person"></i></div>
+						<div class="titulo-menu">Perfil</div>
+					</div>
+				</div>
+				<div class="cell-2" ng-click="solicitarServicio()"> 
+					<div>
+						<div><i class="ion-android-bicycle"></i></div>
+						<div class="titulo-menu">Solicitar servicio</div>
+					</div>
+				</div>
+			</div>
+			<div class="cell-row cell-row-2">
+				<div class="cell-3" ng-click="historialPedidos()">
+					<div>
+						<div><i class="ion-android-list"></i></div>
+						<div class="titulo-menu">Historial</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

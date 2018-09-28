@@ -1,0 +1,39 @@
+<ion-view view-title="Petición" name="menu-view" ng-init="init()" cache-view="false">
+	<ion-header-bar class="app-icon-header">
+		<button class="button button-icon icon ion-chevron-left custom-icon-white" ng-click="irAtras()" ng-disabled="controlDisabled"></button>
+	</ion-header-bar>
+	<ion-content class="padding" style="background: url(img/login.png) center; background-size: cover;">
+		<div class="container padding">
+			<br>
+			<h1 class="padding custom-icon-yellow">Registrar Usuario</h1>
+			<label class="item item-input custom-back-transparent boton-centrado">
+				<input class="input-registro placeholder-registro" type="text" placeholder="Nombre" ng-model="userRegistro.name" spellcheck="false">
+			</label>
+			<label class="item item-input custom-back-transparent boton-centrado">
+				<input class="input-registro placeholder-registro" type="text" placeholder="Apellido" ng-model="userRegistro.last_name" spellcheck="false">
+			</label>
+			<label class="item item-input custom-back-transparent boton-centrado">
+				<input class="input-registro placeholder-registro" type="text" placeholder="Correo Electrónico" ng-model="userRegistro.mail" spellcheck="false">
+			</label>
+			<label class="item item-input custom-back-transparent boton-centrado">
+				<input class="input-registro placeholder-registro" type="password" placeholder="Constraseña" ng-model="userRegistro.password" spellcheck="false">
+			</label>
+			<label class="item item-input custom-back-transparent boton-centrado">
+				<input class="input-registro placeholder-registro" type="password" placeholder="Confirmar Constraseña" ng-model="userRegistro.passwordConfirm" spellcheck="false">
+			</label>
+			<label class="item item-input custom-back-transparent boton-centrado">
+				<input class="input-registro placeholder-registro" type="text" placeholder="Teléfono de Contacto" ng-model="userRegistro.phone" spellcheck="false">
+			</label>
+			<br>
+			<div class="row boton-centrado">
+				<ion-checkbox class="col custom-back-transparent1" ng-model="userRegistro.accept"></ion-checkbox>
+				<div>
+					<p style="text-align: center !important; margin-bottom: 0 !important" class="input-registro">Acepto los</p><a style="text-align: center !important; cursor: pointer !important;" class="input-terminos" ng-click="terminosYCondiciones()">términos y condiciones</a>
+				</div>
+			</div>
+			<button class="boton-transparente boton-centrado button button-block ion-android-list icon-left custom-icon-yellow" ng-click="registrarUsuario()" ng-disabled="controlDisabled">
+				<a class="fuente-boton">Registrar Usuario</a>
+			</button>
+		</div>
+	</ion-content>
+</ion-view>
